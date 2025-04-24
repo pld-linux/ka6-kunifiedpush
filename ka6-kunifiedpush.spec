@@ -80,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %doc README.md
+%dir /etc/xdg/KDE
 /etc/xdg/KDE/kunifiedpush-distributor.conf
 /etc/xdg/autostart/org.kde.kunifiedpush-distributor.desktop
 %attr(755,root,root) %{_bindir}/kunifiedpush-distributor
