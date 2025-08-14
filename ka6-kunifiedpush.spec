@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.3
+%define		kdeappsver	25.08.0
 %define		kframever	6.13.0
 %define		qtver		6.8
 %define		kaname		kunifiedpush
 Summary:	Unified push
 Name:		ka6-%{kaname}
-Version:	25.04.3
+Version:	25.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	3715dcfe6ea0becb966de7db25f3dc13
+# Source0-md5:	04c2af4ffe860f6dbef0b1e9f1d58c92
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -95,6 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_push_notifications.so
 %{_desktopdir}/kcm_push_notifications.desktop
 %{_datadir}/qlogging-categories6/org_kde_kunifiedpush.categories
+%{systemduserunitdir}/graphical-session.target.wants/kunifiedpush-distributor.service
+%{systemduserunitdir}/kunifiedpush-distributor.service
 
 %files devel
 %defattr(644,root,root,755)
