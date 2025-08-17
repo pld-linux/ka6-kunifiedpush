@@ -8,7 +8,7 @@
 Summary:	Unified push
 Name:		ka6-%{kaname}
 Version:	25.08.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -16,6 +16,7 @@ Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kan
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
+BuildRequires:	Qt6WebSockets-devel
 BuildRequires:	Qt6Widgets-devel
 BuildRequires:	gettext-tools
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
@@ -95,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_push_notifications.so
 %{_desktopdir}/kcm_push_notifications.desktop
 %{_datadir}/qlogging-categories6/org_kde_kunifiedpush.categories
+%dir %{systemduserunitdir}/graphical-session.target.wants
 %{systemduserunitdir}/graphical-session.target.wants/kunifiedpush-distributor.service
 %{systemduserunitdir}/kunifiedpush-distributor.service
 
