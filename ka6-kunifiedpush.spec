@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	6.13.0
 %define		qtver		6.8
 %define		kaname		kunifiedpush
 Summary:	Unified push
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	3447ae57da2f05b17c21a325bbe8a2ed
+# Source0-md5:	9728a436850c9d954cb962a1b779e431
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -93,8 +93,8 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/autostart/org.kde.kunifiedpush-distributor.desktop
 %attr(755,root,root) %{_bindir}/kunifiedpush-distributor
 %ghost %{_libdir}/libKUnifiedPush.so.1
-%attr(755,root,root) %{_libdir}/libKUnifiedPush.so.*.*
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_push_notifications.so
+%{_libdir}/libKUnifiedPush.so.*.*
+%{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_push_notifications.so
 %{_desktopdir}/kcm_push_notifications.desktop
 %{_datadir}/qlogging-categories6/org_kde_kunifiedpush.categories
 %dir %{systemduserunitdir}/graphical-session.target.wants
