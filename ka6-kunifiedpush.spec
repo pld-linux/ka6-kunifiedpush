@@ -38,6 +38,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Kunified push - client library and distributor daemon.
 
+%description -l pl.UTF-8
+Kunified push - bliblioteka kliencka i demon dystrybutora.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
